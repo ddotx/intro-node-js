@@ -9,9 +9,10 @@ app.use(urlencoded({extended: true}))
 app.use(json())
 
 app.get('/user/:id', async (req, res) => {
-  const id = req.id
+  debugger //* => run with node --inspect && use chrome inspect
+  const id = req.params.id
   // should ge user by given id in route param
-  const user = await users.findUser(user => user.id === id)
+  const user = await users.findUser(id)
   res.status(200).send(user)
 })
 
