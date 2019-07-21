@@ -74,6 +74,10 @@ const server = http.createServer(async (req, res) => { //TODO <== async
   // most important part, send down the asset
 })
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
-})
+// server.listen(port, hostname, () => {
+//   console.log(`Server running at http://${hostname}:${port}/`)
+// })
+//TODO: Deploy to Heroku
+server.listen(process.env.PORT, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
